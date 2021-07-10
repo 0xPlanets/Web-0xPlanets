@@ -62,8 +62,6 @@ camera.position.y = 0
 camera.position.z = 2
 scene.add(camera)
 
-// Controls
-
 /**
  * Renderer
  */
@@ -81,22 +79,15 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 const clock = new THREE.Clock()
 
 const tick = () => {
-
     const elapsedTime = clock.getElapsedTime()
 
     // Update objects
-    // sphere.rotation.x = .3 * elapsedTime
     sphere.rotation.y = 0.3 * elapsedTime
-
-    // Update Orbital Controls
-    // controls.update()
 
     // Render
     renderer.render(scene, camera)
 
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
-
 }
-
 tick()
